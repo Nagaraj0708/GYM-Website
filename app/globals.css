@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --brand-lime: #C0E837;
+    --brand-lime-light: #D4E157;
+    --brand-lime-dark: #9EB82B;
+    --brand-black: #08080A;
+    --brand-charcoal: #121216;
+    --brand-charcoal-light: #1A1A22;
+    --brand-charcoal-border: #262632;
+    --brand-white: #FFFFFF;
+    --brand-muted: #9E9E9E;
+    
+    --background: var(--brand-black);
+    --foreground: var(--brand-white);
+  }
+
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #08080A;
+    color: var(--brand-white);
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+    selection-background-color: #C0E837;
+    selection-color: #08080A;
+  }
+
+  ::selection {
+    background-color: #C0E837;
+    color: #08080A;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-bebas), 'Bebas Neue', 'Anton', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262632;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C0E837;
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: rgba(18, 18, 22, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(26, 26, 34, 0.95);
+  border-color: rgba(192, 232, 55, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(192, 232, 55, 0.2);
+  transform: translateY(-4px);
+}
+
+.glass-nav {
+  background: rgba(8, 8, 10, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Lime Energy Gradients & Glows */
+.gradient-lime-text,
+.gradient-orange-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #D4E157 60%, #C0E837 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-lime-glow {
+  box-shadow: 0 0 50px -10px rgba(192, 232, 55, 0.4);
+}
+
+.lime-border-glow,
+.orange-border-glow {
+  position: relative;
+}
+
+.lime-border-glow::before,
+.orange-border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(192, 232, 55, 0.6), transparent 60%, rgba(212, 225, 87, 0.8));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lime-border-glow:hover::before,
+.orange-border-glow:hover::before {
+  opacity: 1;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
 }

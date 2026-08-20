@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="logoGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7A600" />
+      <stop offset="100%" stop-color="#FF6A00" />
+    </linearGradient>
+  </defs>
+  <!-- Outer Hex/Circle Athletic Ring -->
+  <circle cx="50" cy="50" r="44" stroke="url(#logoGlow)" stroke-width="6" stroke-dasharray="200 40" stroke-linecap="round" />
+  <!-- Dynamic Flame/R Accent -->
+  <path d="M38 26 H56 C67 26 72 32 72 40 C72 48 65 52 56 52 H46 V74 H38 V26 Z M46 44 H56 C61 44 64 42 64 39 C64 36 61 34 56 34 H46 V44 Z" fill="url(#logoGlow)" />
+  <path d="M54 52 L68 74 H58 L46 54 Z" fill="url(#logoGlow)" />
+  <!-- Micro Power Spark -->
+  <circle cx="50" cy="18" r="4" fill="#F7A600" />
+</svg>

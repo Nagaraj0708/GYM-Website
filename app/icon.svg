@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#08080A"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="none" stroke="#C0E837" stroke-width="2" stroke-opacity="0.3"/>
+  
+  <!-- Dumbbell / FiFusion Icon in Cyber Lime -->
+  <g fill="#C0E837">
+    <!-- Left Weight Plate -->
+    <rect x="14" y="20" width="8" height="24" rx="3" />
+    <rect x="10" y="24" width="4" height="16" rx="2" />
+    
+    <!-- Right Weight Plate -->
+    <rect x="42" y="20" width="8" height="24" rx="3" />
+    <rect x="50" y="24" width="4" height="16" rx="2" />
+    
+    <!-- Center Bar -->
+    <rect x="22" y="29" width="20" height="6" rx="2" />
+  </g>
+</svg>
